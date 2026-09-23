@@ -12,3 +12,5 @@ echo "$directory already exists."
 fi
 done
 }
+
+initialize_system
