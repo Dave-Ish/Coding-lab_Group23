@@ -1,4 +1,5 @@
 water_audit() {
+if [ ! -f active_logs/water_usage_log.log ]; then echo "water_usage_log.log not found"; return 1; fi
     awk -F'|' '
     {
         gsub(/^[ \t]+|[ \t]+$/, "", $2)
