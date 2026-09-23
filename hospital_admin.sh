@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# Locks active_logs to owner-only access per KNH data policy
 secure_data() {
     echo "Securing active_logs directory..."
     chmod 700 active_logs
