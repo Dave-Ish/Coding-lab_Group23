@@ -16,4 +16,5 @@ water_audit() {
             printf "No ICU_WATER_RESERVE readings found.\n"
         }
     }' active_logs/water_usage_log.log
+# Calculates average water usage for ICU_WATER_RESERVE device and prints summary
 }
