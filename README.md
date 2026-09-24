@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 # Kenyatta National Hospital Management System
 
 ## Project Overview
@@ -88,3 +89,74 @@ Archive the logs:
 Stop the hospital data system:
 
 ./hospital_system.py stop
+=======
+# KNH Hospital Sensor Project — Coding-lab_Group23
+
+## Project Overview
+This project is engineered for **Kenyatta National Hospital (KNH)** to securely manage, analyze, and rotate telemetry data from **12 critical healthcare sensors** (Heart Rate, Temperature, and Water Usage). 
+
+The system leverages a core Python data simulator engine alongside an automated suite of production-ready Bash shell utilities. It implements a strict permission-governed environment, an administrative setup framework, custom stream parsing analytics, and an isolated log rotation framework.
+
+---
+
+## DevOps Team & Roles
+*   **Lewis (Architect & Clinical Analyst):** Responsible for directory initialization logic (`initialize_system`) and critical medical alert parsing (`process_vitals`).
+*   **Latonia (Security Lead & Facility Auditor):** Responsible for data permission lockdown enforcement (`secure_data`) and utility math analytics (`water_audit`).
+*   **Keji (Orchestrator & Operations):** Responsible for script execution mapping, repository design constraints, `.gitignore` setup, and documentation management.
+*   **David (Archivist & Release Engineer):** Responsible for log rotation engineering (`hospital_archive.sh`), conflict mitigation management, and final compliance auditing.
+
+---
+
+## Installation & Deployment
+
+### 1. System Requirements & Clone
+Ensure you are running a Linux/Unix environment with `bash` and `python3` installed.
+```bash
+git clone https://github.com
+cd Coding-lab_Group23
+```
+
+### 2. Run the Core Medical Data Engine
+The Python engine controls data simulation across the hardware nodes:
+*   **Start Data Stream:** `python3 hospital_system.py start`
+*   **Stop Data Stream:** `python3 hospital_system.py stop`
+
+---
+
+## Detailed Script Manual
+
+### 1. Automated Administrative Setup (`hospital_admin.sh`)
+*   **Execution:**
+    ```bash
+    chmod +x hospital_admin.sh
+    ./hospital_admin.sh
+    ```
+*   **What it does:** 
+    1. Runs `initialize_system()` to verify and generate required data paths (`active_logs/`, `archived_logs/`, `reports/`).
+    2. Runs `secure_data()` to lock access rules on live sensor directories (`chmod 700`) ensuring only the system owner can read/write data.
+    3. Outputs a secure runtime signature with the system execution timestamp.
+
+### 2. Reporting & Live Analytics Dashboard (`hospital_analysis.sh`)
+*   **Execution:**
+    ```bash
+    chmod +x hospital_analysis.sh
+    ./hospital_analysis.sh
+    ```
+*   **What it does:**
+    *   **Clinical Analysis:** Scans active vitals via `grep` and parses medical alerts tagged as `CRITICAL` directly into `reports/critical_alerts.txt`.
+    *   **Facility Audit:** Calculates real-time mathematical averages of utility depletion for `ICU_WATER_RESERVE` logs using `awk` and prints a structured console report.
+
+### 3. Log Rotation Engine (`hospital_archive.sh`)
+*   **Execution:**
+    ```bash
+    chmod 700 hospital_archive.sh
+    ./hospital_archive.sh
+    ```
+*   **What it does:** Breaks off active logs, renames them using chronological timestamps (e.g., `heart_rate_20260924_1515.log`), and pushes them cleanly to storage inside `archived_logs/`. It then deploys `touch` to reset clean baseline entry points so the simulator engine continues logging uninterrupted.
+
+---
+
+## Compliance & Security Constraints
+*   **Data Breach Prevention:** True patient records are strictly barred from remote storage synchronization. The repository uses an active `.gitignore` topology tracking and ignoring all raw output subdirectories (`active_logs/`, `archived_logs/`, `reports/`, and `/tmp/hospital_system.pid`).
+*   **Execution Rule:** Scripts must be initiated by the primary environment owner to pass `chmod` runtime permission challenges.
+>>>>>>> Stashed changes
