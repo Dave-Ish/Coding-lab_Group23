@@ -56,8 +56,8 @@ These directories are excluded from Git using .gitignore because they contain ge
 ## Team Members and Roles
 
 1. Keji Vicky Wani Hillario - Execution Logic / Hospital Administration
-2. [Member 2 Name] - [Role]
-3. [Member 3 Name] - [Role]
+2. Lewis Gathungu Wanjiku -Architect & Clinical Analyst 
+3.  - [Role]
 4. [Member 4 Name] - [Role]
 
 ## How to Run the Project
