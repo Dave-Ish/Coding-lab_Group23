@@ -1,28 +1,18 @@
 #!/bin/bash
 
+#Create the required hospital directories if they do not exist
+
 initialize_system() {
-    echo "Checking hospital directories..."
+for directory in active_logs archived_logs reports
+do
+if [ ! -d "$directory" ]; then
+echo "Creating $directory directory.."
+mkdir "$directory"
 
-    if [ ! -d "active_logs" ]; then
-        mkdir active_logs
-        echo "Created active_logs directory."
-    else
-        echo "active_logs directory already exists."
-    fi
-
-    if [ ! -d "archived_logs" ]; then
-        mkdir archived_logs
-        echo "Created archived_logs directory."
-    else
-        echo "archived_logs directory already exists."
-    fi
-
-    if [ ! -d "reports" ]; then
-        mkdir reports
-        echo "Created reports directory."
-    else
-        echo "reports directory already exists."
-    fi
+else
+echo "$directory already exists."
+fi
+done
 }
 
 secure_data() {
