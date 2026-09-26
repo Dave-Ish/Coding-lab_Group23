@@ -23,13 +23,13 @@ chmod 700 active_logs
 
 # If the active_log directory contains files, lock them to 600 
 
-if [-n "$(ls -A active_logs 2>/ dev/null)" ];
+if [ -n "$(ls -A active_logs 2>/dev/null)" ];
 then
 chmod 600 active_logs/*
 fi
 echo "Permisions updated. current status: "
 ls -ld active_logs
-ls -l active_log
+ls -l active_logs
 }
 
 # Automotion core block

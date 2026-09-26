@@ -9,7 +9,7 @@ TIMESTAMP=$(date +"%Y%m%d_%H%M")
 
 # 2.  defnined the log arrays
 
-LOG_FILES=("heart_rate_log.log" "temperature_log.log" "water_log.log")
+LOG_FILES=("heart_rate_log.log" "temperature_log.log" "water_usage_log.log")
 
 # . Checking weather the destination dir  not missing
 
@@ -26,10 +26,10 @@ for log in "${LOG_FILES[@]}"; do
 
 	ACTIVE_PATH="active_logs/$log"
 
-	if [ -f "ACTIVE_PATH" ] then
+	if [ -f "$ACTIVE_PATH" ]; then
 		# I passed a  prefix name( e.g., hear_rate) removing the  _log.log
 		BASE_NAME=$(basename "$log" _log.log)
-		ARCHIVE_NAME="${BASE_NAME}_&{TIMESTAMP}.log"
+		ARCHIVE_NAME="${BASE_NAME}_${TIMESTAMP}.log"
 		
 		#Execute the move (overwrites existing matching destination paths)
 		mv "$ACTIVE_PATH" "archived_logs/$ARCHIVE_NAME"
