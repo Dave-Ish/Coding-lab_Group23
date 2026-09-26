@@ -57,8 +57,8 @@ These directories are excluded from Git using .gitignore because they contain ge
 
 1. Keji Vicky Wani Hillario - Execution Logic / Hospital Administration
 2. Lewis Gathungu Wanjiku -Architect & Clinical Analyst 
-3.  - [Role]
-4. [Member 4 Name] - [Role]
+3.  David Ishimwe - Archivist & Release Engineer
+4. Igihozo Latonia - 
 
 ## How to Run the Project
 
