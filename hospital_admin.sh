@@ -15,16 +15,26 @@ fi
 done
 }
 
-initialize_system
+# secure directories and interioal files per KNH protocol
 
-# Locks active_logs to owner-only access per KNH data policy
-secure_data() {
-    echo "Securing active_logs directory..."
-    chmod 700 active_logs
-    if [ -n "$(ls -A active_logs 2>/dev/null)" ]; then
-    chmod 600 active_logs/*
+secure_data(){
+echo "Securing active _logs directory..."
+chmod 700 active_logs
+
+# If the active_log directory contains files, lock them to 600 
+
+if [-n "$(ls -A active_logs 2>/ dev/null)" ];
+then
+chmod 600 active_logs/*
 fi
-    echo "Permissions updated. Current status:"
-    ls -ld active_logs
-    ls -l active_logs
+echo "Permisions updated. current status: "
+ls -ld active_logs
+ls -l active_log
 }
+
+# Automotion core block
+initialize_system
+secure_data
+
+echo "System Environment Secured"
+echo "Date: $(date)"
