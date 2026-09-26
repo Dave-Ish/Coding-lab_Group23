@@ -15,13 +15,24 @@ fi
 done
 }
 
-secure_data() {
-    chmod 700 active_logs
-    echo "Active logs permissions secured:"
-    ls -ld active_logs
+# secure directories and interioal files per KNH protocol
+
+secure_data(){
+echo "Securing active _logs directory..."
+chmod 700 active_logs
+
+# If the active_log directory contains files, lock them to 600 
+
+if [-n "$(ls -A active_logs 2>/ dev/null)" ];
+then
+chmod 600 active_logs/*
+fi
+echo "Permisions updated. current status: "
+ls -ld active_logs
+ls -l active_log
 }
 
-# Execute the system setup
+# Automotion core block
 initialize_system
 secure_data
 
