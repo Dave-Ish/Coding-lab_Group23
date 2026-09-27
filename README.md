@@ -160,6 +160,4 @@ The Python engine controls data simulation across the hardware nodes:
 ## Compliance & Security Constraints
 *   **Data Breach Prevention:** True patient records are strictly barred from remote storage synchronization. The repository uses an active `.gitignore` topology tracking and ignoring all raw output subdirectories (`active_logs/`, `archived_logs/`, `reports/`, and `/tmp/hospital_system.pid`).
 *   **Execution Rule:** Scripts must be initiated by the primary environment owner to pass `chmod` runtime permission challenges.
-=======
->>>>>>> main
 
